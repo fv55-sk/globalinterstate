@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Global Interstate System — Master Study Suite</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111a2e;
+      --card-inner: #18243e;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --gold: #fbbf24;
+      --green: #22c55e;
+      --red: #ef4444;
+      --border: #233554;
+      --hl-def: #fde047;
+      --hl-term: #38bdf8;
+      --hl-stat: #4ade80;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding-bottom: 5rem;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0284c7 0%, #090d16 100%);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .hl-term {
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--hl-term);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .hl-def {
+      background: rgba(251, 191, 36, 0.18);
+      color: var(--hl-def);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 600;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .hl-stat {
+      background: rgba(74, 222, 128, 0.18);
+      color: var(--hl-stat);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+    }
+
+    .video-quote {
+      background: #0d1527;
+      border-left: 4px solid var(--gold);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 1.02rem;
+    }
+
+    .video-quote .source-label {
+      display: block;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      background: #0b1120;
+      padding: 0.75rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    nav button.active, nav button:hover {
+      background: var(--accent);
+      color: #090d16;
+      border-color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      font-size: 1.45rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin: 1.25rem 0 0.5rem 0;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    .full-detail-box {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .full-detail-box h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .flashcard {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .flashcard:hover {
+      border-color: var(--accent);
+    }
+
+    .flashcard-q {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flashcard-a {
+      display: none;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      color: #cbd5e1;
+    }
+
+    .flashcard.open .flashcard-a {
+      display: block;
+    }
+
+    .score-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .score-banner span {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-ctrl {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-ctrl:hover {
+      background: var(--accent);
+      color: #090d16;
+      border-color: var(--accent);
+    }
+
+    .quiz-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .quiz-q-num {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .quiz-prompt {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.85rem;
+    }
+
+    .quiz-input-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .quiz-input {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #090d16;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .quiz-input:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: #090d16;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-hover);
+    }
+
+    .mc-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .mc-option {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+      color: #f1f5f9;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .mc-option:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: #233554;
+    }
+
+    .mc-option.selected-correct {
+      background: rgba(34, 197, 94, 0.25) !important;
+      border-color: var(--green) !important;
+      color: #86efac !important;
+      font-weight: 600;
+    }
+
+    .mc-option.selected-wrong {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: var(--red) !important;
+      color: #fca5a5 !important;
+      font-weight: 600;
+    }
+
+    .mc-option.highlight-answer {
+      border-color: var(--green) !important;
+      color: #86efac !important;
+      font-weight: 600;
+    }
+
+    .feedback-box {
+      display: none;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    .feedback-box.correct {
+      display: block;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid var(--green);
+      color: #86efac;
+    }
+
+    .feedback-box.wrong {
+      display: block;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid var(--red);
+      color: #fca5a5;
+    }
+
+    .feedback-box strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>The Global Interstate System</h1>
+    <p>Complete 50-Topic Study Suite • Slide & Audio Verbatim Definitions • Dual Shufflable Exams</p>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" onclick="showTab('notes')">Verbatim Lecture Notes</button>
+    <button class="nav-btn" onclick="showTab('recall')">Active Recall Drill</button>
+    <button class="nav-btn" onclick="showTab('id-quiz')">Identification Exam (50 Items)</button>
+    <button class="nav-btn" onclick="showTab('mc-quiz')">Multiple Choice Quiz (50 Items)</button>
+  </nav>
+
+  <main>
+    <!-- TAB 1: NOTES -->
+    <section id="notes" class="tab-content active">
+      
+      <div class="card">
+        <h2>Part 1: The Interstate System & Foundational Principles</h2>
+        
+        <h3>Core Definitions (Verbatim Slides & Audio)</h3>
+        <div class="video-quote">
+          <span class="source-label">Slide 7: The Interstate System</span>
+          "The idea of a 'system' requires the <span class="hl-def">existence of units, among which interactions take place</span>. In the interstate system, the <span class="hl-term">units are the states</span>, and the <span class="hl-term">interactions include war, diplomacy, and cooperation</span>."[cite: 3]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide 5: International Organization</span>
+          "An international organization is an <span class="hl-def">organization with an international membership, scope, or presence</span>. (e.g. United Nations)"[cite: 3]
+        </div>
+        <div class="video-quote">
+          <span class="source-label">Slide 6: Global Corporation / MNC</span>
+          "A global company is generally referred to as a <span class="hl-term">multinational corporation (MNC)</span>. An MNC is a company that <span class="hl-def">operates in two or more countries</span>, leveraging the global environment to approach varying markets in attaining revenue generation."[cite: 3]
+        </div>
+
+        <h3>Three Core Principles of the Interstate System</h3>
+        <div class="full-detail-box">
+          <h4 style="color:var(--accent);">1. Sovereignty</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 9 Verbatim Meaning</span>
+            "In political theory, the <span class="hl-def">ultimate overseer, or authority, in the decision-making process of the state and in the maintenance of order</span>... was originally meant to be the equivalent of <span class="hl-term">supreme power</span>."[cite: 3]
+          </div>
+          <p><strong>Etymology:</strong> Derived from the Latin term <span class="hl-term">superanus</span> through the French term <span class="hl-term">souveraineté</span>[cite: 3]. It signifies supreme authority within domestic territory, free from external control[cite: 3].</p>
+        </div>
+
+        <div class="full-detail-box">
+          <h4 style="color:var(--gold);">2. Territoriality</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 10 Verbatim Meaning</span>
+            "Is a term associated with non verbal communication that refers to <span class="hl-def">how people use space (territory) to communicate ownership or occupancy of areas and possessions</span>."[cite: 3]
+          </div>
+          <p><em>Philippine Context:</em> The lecturer notes territorial disputes in the West Philippine Sea (Spratly Islands) and claims over Sabah as modern territoriality controversies[cite: 3].</p>
+        </div>
+
+        <div class="full-detail-box">
+          <h4 style="color:var(--green);">3. Non-Interference / Non-Intervention</h4>
+          <div class="video-quote">
+            <span class="source-label">Slide 11 &amp; Audio Verbatim</span>
+            "Interference is the <span class="hl-def">act of or something that obstructs or hinders</span>. Under the principle of non-interference, <span class="hl-term">states in the world cannot intervene or interfere in purely domestic internal affairs of another state</span>."[cite: 3]
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Part 2: The Peace of Westphalia (1648) &amp; Rise of the Nation-State</h2>
+        
+        <h3>Historical Context &amp; Treaties</h3>
+        <p>Westphalia is a region in northwestern Germany[cite: 3]. The <span class="hl-term">1648 Peace of Westphalia</span> ended the <span class="hl-stat">Thirty Years' War (1618–1648)</span> in the Holy Roman Empire, and the <span class="hl-stat">Eighty Years' War (1568–1648)</span> between Spain and the Dutch Republic, formally recognizing the <span class="hl-def">independence of the Dutch Republic</span>[cite: 3].</p>
+        
+        <p><strong>Three Treaties Signed:</strong></p>
+        <ul>
+          <li>The Peace of Münster[cite: 3]</li>
+          <li>The Treaty of Münster[cite: 3]</li>
+          <li>The Treaty of Osnabrück[cite: 3]</li>
+        </ul>
+
+        <h3>Pre-Westphalia vs. Post-Westphalia Locus of Power</h3>
+        <ul>
+          <li><strong>Pre-Westphalia:</strong> Europe consisted of feudal entities; states were not the main actors[cite: 3]. At the macro level, ultimate authority resided in the <span class="hl-term">Roman Catholic Church (Pope)</span> and the Emperor of the Holy Roman Empire[cite: 3]. At the micro level, authority centered on local political units smaller than states[cite: 3].</li>
+          <li><strong>Post-Westphalia:</strong> Ended the hegemony of the Habsburg Empire; the sovereign nation-state was recognized as the primary unit of international relations, recognizing <span class="hl-def">no superior authority over them</span>[cite: 3].</li>
+        </ul>
+
+        <h3>How the State Works (Capital and Coercion)</h3>
+        <div class="video-quote">
+          <span class="source-label">Slide 17: Charles Tilly</span>
+          "<span class="hl-def">The state makes wars, and war makes the state.</span>"[cite: 3]
+        </div>
+        <p>The state arose from the convergence of political and economic factors—namely <span class="hl-term">capital and coercion</span> (wealth and means to launch wars)[cite: 3]:</p>
+        <p style="text-align:center; font-weight:bold; color:var(--accent);">Money in Economy &rarr; Capitalist Class Money &rarr; Monarchs &rarr; Bureaucracy &rarr; Tax Collection / Standing Army &rarr; Security to Capitalists[cite: 3]</p>
+
+        <h3>Five Principles in Politics Established by Westphalia</h3>
+        <ol>
+          <li>The principle of <span class="hl-term">state sovereignty</span>[cite: 3].</li>
+          <li>The principle of <span class="hl-term">legal equality of states</span> ("no sovereign among equals")[cite: 3].</li>
+          <li>The principle of <span class="hl-term">non-intervention of one state in the internal affairs of another</span>[cite: 3].</li>
+          <li><span class="hl-term">International law and diplomacy</span>[cite: 3].</li>
+          <li><span class="hl-def">Reason of state (raison d'état) replaced religion</span> (separation of state and church in governance)[cite: 3].</li>
+        </ol>
+
+        <h3>Adoption in the United Nations Charter</h3>
+        <ul>
+          <li><strong>Article 2(1):</strong> "The organization is based on the principle of the <span class="hl-def">sovereign equality of all its members</span>."[cite: 3]</li>
+          <li><strong>Article 2(7):</strong> "Nothing contained in the present charter shall authorize the United Nations to <span class="hl-def">intervene in matters which are essentially within the domestic jurisdiction of any state</span>."[cite: 3]</li>
+          <li><strong>Decolonization &amp; National Consciousness:</strong> A huge wave of Asian and African states gained equal sovereign status through post-WWII decolonization (e.g., the Philippines granted independence by the US on <span class="hl-stat">July 4, 1946</span>)[cite: 3].</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Part 3: Challenges of Globalization to the Interstate System</h2>
+        
+        <h3>Definition of Globalization (Slide 31)</h3>
+        <div class="video-quote">
+          <span class="source-label">Slide 31 Verbatim Definition</span>
+          "Broadly defined as the <span class="hl-def">migration of human activities from the narrow confines of nation-state to a much larger scale</span>... integration of national economies through trade, investment, capital flows, labor migration and technology."[cite: 4]
+        </div>
+
+        <h3>Two Competing Perspectives on State vs. Globalization</h3>
+        <div class="grid-2">
+          <div class="grid-item">
+            <h4 style="color:var(--accent);">Outside-In View</h4>
+            <div class="video-quote">
+              <span class="source-label">Slide 74 Verbatim</span>
+              "Regards globalization as an <span class="hl-def">exogenous process that is making a profound impact on states affairs</span>. States become powerless to the forces of the market... globalization is undermining the contemporary interstate system."[cite: 4]
+            </div>
+          </div>
+          <div class="grid-item">
+            <h4 style="color:var(--gold);">Inside-Out View</h4>
+            <div class="video-quote">
+              <span class="source-label">Slide 75 Verbatim</span>
+              "Recognizes that <span class="hl-def">states are the ones influencing the level of global interconnectedness today</span>... a transformative process that redefines conceptions of state, sovereignty, and territory, and does not necessarily replace them."[cite: 4]
+            </div>
+          </div>
+        </div>
+
+        <h3>Six Key Westphalian Challenges Under Globalization (Slide 33)</h3>
+        <ol>
+          <li><strong>Legal sovereignty is no longer the monopoly of national governments:</strong> Authority shifted upwards to supranational institutions (EU, WTO) whose rules override domestic laws[cite: 4].</li>
+          <li><strong>Control of physical territory is much less meaningful:</strong> Global telecommunications, the Internet, and digital capital flows bypass national borders[cite: 4].</li>
+          <li><strong>Non-state actors as 'new stars' of the global order:</strong> MNCs, IGOs, NGOs, as well as illicit outlaw groups (drug cartels, ethnic mafias) dictate terms to states[cite: 4].</li>
+          <li><strong>International law challenges the supremacy of state sovereignty:</strong> Human rights norms, environmental protection, and international tribunals (e.g., International Criminal Court / ICC investigating human rights violations like the Philippine drug war under Duterte) hold sovereign states accountable[cite: 3, 4].</li>
+          <li><strong>Westphalian wars are in decline, non-Westphalian conflicts on the rise:</strong> Shift from formal inter-state war to asymmetric, economic, informational, and cartel conflicts[cite: 4].</li>
+          <li><strong>Modernization:</strong> Industrialization, market infrastructure development, and political transformation driven by dominant powers (e.g., US presence in Afghanistan and the Philippines)[cite: 4].</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>Part 4: Evolution &amp; Theoretical Perspectives of the Interstate System</h2>
+        
+        <h3>The Cold War Era (1947–1991)</h3>
+        <p>A global ideological, political, and military struggle between the two postwar superpowers: the <span class="hl-term">United States (Capitalism &amp; Democracy)</span> and the <span class="hl-term">Soviet Union / USSR (Socialism &amp; Communism)</span>[cite: 5].</p>
+        
+        <p><strong>Timeline of Crises &amp; Proxy Conflicts Discussed:</strong></p>
+        <ul>
+          <li><strong>1945:</strong> Berlin Occupation and division of Germany[cite: 5].</li>
+          <li><strong>1947:</strong> Greek Civil War (US and USSR backing opposing sides)[cite: 5].</li>
+          <li><strong>1948:</strong> US President Harry S. Truman vs. Soviet Premier Joseph Stalin over rearming Germany[cite: 5].</li>
+          <li><strong>1950:</strong> People's Republic of China (PRC, Communist) vs. Republic of China (ROC, Taiwan)[cite: 5].</li>
+          <li><strong>1951:</strong> Korean War (US/South Korea vs. USSR/China/North Korea)[cite: 5].</li>
+          <li><strong>1956:</strong> Hungarian Revolution against Soviet domination[cite: 5].</li>
+          <li><strong>1959:</strong> Cuban Revolution led by Fidel Castro (M-26-7)[cite: 5].</li>
+          <li><strong>1961:</strong> Space/Rocketry Race (Titan II vs. Vostok/Soyuz) and the erection of the <span class="hl-term">Berlin Wall</span>[cite: 5].</li>
+          <li><strong>1980s:</strong> Soviet War in Afghanistan[cite: 5].</li>
+        </ul>
+
+        <h3>Four Theoretical Perspectives Summary Table (Slide 51)</h3>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; margin-top:1rem; font-size:0.95rem;">
+            <thead>
+              <tr style="background:#1e293b; color:var(--accent); border:1px solid var(--border);">
+                <th style="padding:0.75rem; border:1px solid var(--border);">Theory</th>
+                <th style="padding:0.75rem; border:1px solid var(--border);">Central Argument</th>
+                <th style="padding:0.75rem; border:1px solid var(--border);">Assumptions</th>
+                <th style="padding:0.75rem; border:1px solid var(--border);">Focus of Analysis</th>
+                <th style="padding:0.75rem; border:1px solid var(--border);">Key Theorists</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border:1px solid var(--border);">
+                <td style="padding:0.75rem; font-weight:bold; color:var(--accent);">Realism</td>
+                <td style="padding:0.75rem;">States always compete for power.[cite: 5]</td>
+                <td style="padding:0.75rem;">States are rational actors; international system is anarchic.[cite: 5]</td>
+                <td style="padding:0.75rem;">States[cite: 5]</td>
+                <td style="padding:0.75rem;">Kenneth Waltz, John Mearsheimer[cite: 5]</td>
+              </tr>
+              <tr style="border:1px solid var(--border); background:rgba(255,255,255,0.02);">
+                <td style="padding:0.75rem; font-weight:bold; color:var(--gold);">Liberalism</td>
+                <td style="padding:0.75rem;">Democracy, free trade, and international organizations matter to state behavior.[cite: 5]</td>
+                <td style="padding:0.75rem;">States are rational actors; international system is anarchic.[cite: 5]</td>
+                <td style="padding:0.75rem;">States[cite: 5]</td>
+                <td style="padding:0.75rem;">Robert Keohane, Joseph Nye Jr. (also Francis Fukuyama's 'End of History')[cite: 5]</td>
+              </tr>
+              <tr style="border:1px solid var(--border);">
+                <td style="padding:0.75rem; font-weight:bold; color:var(--green);">Constructivism</td>
+                <td style="padding:0.75rem;">Ideas and norms can constitute state behavior, interests, identities, and preferences.[cite: 5]</td>
+                <td style="padding:0.75rem;">Institutions, including anarchy, are socially constructed.[cite: 5]</td>
+                <td style="padding:0.75rem;">Individuals / Social Structures[cite: 5]</td>
+                <td style="padding:0.75rem;">Alexander Wendt, Nicholas Onuf[cite: 5]</td>
+              </tr>
+              <tr style="border:1px solid var(--border); background:rgba(255,255,255,0.02);">
+                <td style="padding:0.75rem; font-weight:bold; color:#f87171;">Marxism</td>
+                <td style="padding:0.75rem;">Capitalist motives cause conflicts between core, semi-peripheral, and peripheral states.[cite: 5]</td>
+                <td style="padding:0.75rem;">History is a class struggle.[cite: 5]</td>
+                <td style="padding:0.75rem;">World system[cite: 5]</td>
+                <td style="padding:0.75rem;">Immanuel Wallerstein, Theotonio dos Santos (Karl Marx)[cite: 5]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ACTIVE RECALL -->
+    <section id="recall" class="tab-content">
+      <div class="card">
+        <h2>Active Recall Drill Cards</h2>
+        <p style="color:var(--text-muted); margin-bottom: 1rem;">Click each card to reveal the exact lecture answer.</p>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is the exact slide definition of an "interstate system"? <span>+</span></div>
+          <div class="flashcard-a">"The idea of a 'system' requires the <strong>existence of units, among which interactions take place</strong>. In the interstate system, the <strong>units are the states</strong>, and the <strong>interactions include war, diplomacy, and cooperation</strong>."[cite: 3]</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What wars were ended by the 1648 Peace of Westphalia? <span>+</span></div>
+          <div class="flashcard-a">The <strong>Thirty Years' War (1618–1648)</strong> in the Holy Roman Empire, and the <strong>Eighty Years' War (1568–1648)</strong> between Spain and the Dutch Republic[cite: 3].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is Charles Tilly's famous quote regarding state formation? <span>+</span></div>
+          <div class="flashcard-a">"<strong>The state makes wars, and war makes the state.</strong>"[cite: 3]</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What are the three treaties comprising the Peace of Westphalia? <span>+</span></div>
+          <div class="flashcard-a">The <strong>Peace of Münster</strong>, the <strong>Treaty of Münster</strong>, and the <strong>Treaty of Osnabrück</strong>[cite: 3].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What do Articles 2(1) and 2(7) of the UN Charter establish? <span>+</span></div>
+          <div class="flashcard-a"><strong>Article 2(1):</strong> Principle of sovereign equality of all member states[cite: 3].<br><strong>Article 2(7):</strong> Non-intervention in matters essentially within the domestic jurisdiction of any state[cite: 3].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">What is the difference between the "Outside-In" and "Inside-Out" views of globalization? <span>+</span></div>
+          <div class="flashcard-a"><strong>Outside-In:</strong> An exogenous process where states become powerless to market forces and borders are undermined[cite: 4].<br><strong>Inside-Out:</strong> States themselves actively shape global interconnectedness; globalization transforms rather than replaces state power[cite: 4].</div>
+        </div>
+
+        <div class="flashcard" onclick="this.classList.toggle('open')">
+          <div class="flashcard-q">How does Marxism view the contemporary interstate system? <span>+</span></div>
+          <div class="flashcard-a">As a <strong>world system</strong> divided along capitalist lines into <strong>core, semi-peripheral, and peripheral states</strong> driven by class struggle[cite: 5].</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: 50-ITEM IDENTIFICATION QUIZ -->
+    <section id="id-quiz" class="tab-content">
+      <div class="score-banner">
+        <div>Progress: <span id="id-progress">0/50</span></div>
+        <div>Score: <span id="id-score">0 / 50</span></div>
+        <div class="btn-group">
+          <button class="btn-ctrl" onclick="shuffleIdQuiz()">🔀 Shuffle Questions</button>
+          <button class="btn-ctrl" onclick="resetIdQuiz()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div id="id-container"></div>
+    </section>
+
+    <!-- TAB 4: 50-ITEM MULTIPLE CHOICE QUIZ -->
+    <section id="mc-quiz" class="tab-content">
+      <div class="score-banner">
+        <div>Progress: <span id="mc-progress">0/50</span></div>
+        <div>Score: <span id="mc-score">0 / 50</span></div>
+        <div class="btn-group">
+          <button class="btn-ctrl" onclick="shuffleMcQuiz()">🔀 Shuffle Questions</button>
+          <button class="btn-ctrl" onclick="resetMcQuiz()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div id="mc-container"></div>
+    </section>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      const targetBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+
+    const masterQuestions = [
+      {
+        id: 1,
+        question: "In the interstate system, what are the primary units among which interactions take place?",
+        accepted: ["states", "state", "the states", "nation states"],
+        displayAnswer: "States",
+        options: ["States", "Corporations", "Non-Governmental Organizations", "Churches"],
+        correctIndex: 0,
+        explanation: "Slide text: 'In the interstate system, the units are the states, and the interactions include war, diplomacy, and cooperation.'"
+      },
+      {
+        id: 2,
+        question: "Name the three interactions that take place among states in the interstate system.",
+        accepted: ["war diplomacy and cooperation", "war diplomacy cooperation", "war, diplomacy, and cooperation"],
+        displayAnswer: "War, diplomacy, and cooperation",
+        options: ["War, diplomacy, and cooperation", "Trade, migration, and tourism", "Boycott, embargo, and sanctions", "Treaties, summits, and protocol"],
+        correctIndex: 0,
+        explanation: "Slide 7 identifies 'war, diplomacy, and cooperation' as the primary interactions among states."
+      },
+      {
+        id: 3,
+        question: "What term denotes the ultimate authority or overseer in the decision-making process of the state and maintenance of order?",
+        accepted: ["sovereignty", "state sovereignty"],
+        displayAnswer: "Sovereignty",
+        options: ["Sovereignty", "Territoriality", "Jurisdiction", "Intervention"],
+        correctIndex: 0,
+        explanation: "Slide 9 defines sovereignty as the ultimate authority in state decision-making and order maintenance, equivalent to supreme power."
+      },
+      {
+        id: 4,
+        question: "From what Latin term is the word 'sovereignty' derived?",
+        accepted: ["superanus"],
+        displayAnswer: "Superanus",
+        explanation: "Slide text: 'Derived from the Latin term superanus through the French term souveraineté.'"
+      },
+      {
+        id: 5,
+        question: "What term associated with non-verbal communication refers to how people use space to communicate ownership or occupancy?",
+        accepted: ["territoriality"],
+        displayAnswer: "Territoriality",
+        explanation: "Slide 10 verbatim definition of territoriality."
+      },
+      {
+        id: 6,
+        question: "What is defined on Slide 11 as the 'act of or something that obstructs or hinders'?",
+        accepted: ["interference"],
+        displayAnswer: "Interference",
+        explanation: "Slide text: 'What does Interference mean? Is the act of or something that obstructs or hinders.'"
+      },
+      {
+        id: 7,
+        question: "In what year was the Peace of Westphalia signed?",
+        accepted: ["1648"],
+        displayAnswer: "1648",
+        explanation: "The historic Peace of Westphalia was signed in 1648, establishing the modern interstate system."
+      },
+      {
+        id: 8,
+        question: "Westphalia is a historical region located in which part of Germany?",
+        accepted: ["northwestern", "northwestern germany", "north-western"],
+        displayAnswer: "Northwestern Germany",
+        explanation: "Slide text: 'Westphalia is a region in northwestern Germany and one of the three historic parts of the state of North Rhine-Westphalia.'"
+      },
+      {
+        id: 9,
+        question: "The Peace of Westphalia ended which European conflict that lasted from 1618 to 1648?",
+        accepted: ["thirty years war", "30 years war", "the thirty years war"],
+        displayAnswer: "Thirty Years' War",
+        explanation: "The Peace of Westphalia brought an end to the destructive Thirty Years' War in the Holy Roman Empire."
+      },
+      {
+        id: 10,
+        question: "Which war between Spain and the Dutch Republic was concluded by the Peace of Westphalia?",
+        accepted: ["eighty years war", "80 years war", "the eighty years war"],
+        displayAnswer: "Eighty Years' War",
+        explanation: "The Peace of Westphalia ended the Eighty Years' War (1568–1648), with Spain recognizing Dutch independence."
+      },
+      {
+        id: 11,
+        question: "Name one of the two Westphalian towns where the peace treaties were negotiated from 1644 to 1648.",
+        accepted: ["munster", "münster", "osnabruck", "osnabrück"],
+        displayAnswer: "Münster or Osnabrück",
+        explanation: "Slide text: 'The peace was negotiated, from 1644, in the Westphalian towns of Münster and Osnabrück.'"
+      },
+      {
+        id: 12,
+        question: "Prior to 1648, which religious institution was the center or locus of authority at the macro level in Europe?",
+        accepted: ["roman catholic church", "catholic church", "the catholic church", "pope"],
+        displayAnswer: "Roman Catholic Church",
+        explanation: "Before Westphalia, macro-level power was held by the Roman Catholic Church and the Pope."
+      },
+      {
+        id: 13,
+        question: "Which sociologist is quoted for the aphorism: 'The state makes wars, and war makes the state'?",
+        accepted: ["charles tilly", "tilly"],
+        displayAnswer: "Charles Tilly",
+        explanation: "Slide 17 features Charles Tilly's famous analysis of state formation and warfare."
+      },
+      {
+        id: 14,
+        question: "What two primary factors enabled monarchs to wield power against the church and feudal lords in state formation?",
+        accepted: ["capital and coercion", "capital coercion"],
+        displayAnswer: "Capital and Coercion",
+        explanation: "Slide text: 'These factors primarily were: capital and coercion, that is: wealth (resources), and means to launch wars.'"
+      },
+      {
+        id: 15,
+        question: "What group in the economy provided money to monarchs in exchange for state protection and security?",
+        accepted: ["capitalist class", "capitalists", "the capitalist class", "businessmen"],
+        displayAnswer: "Capitalist Class",
+        explanation: "Diagram on Slide 19 shows the capitalist class funneling money to monarchs in exchange for security and property protection."
+      },
+      {
+        id: 16,
+        question: "Which Westphalian principle asserts that all sovereign states have equal legal status ('no sovereign among equals')?",
+        accepted: ["legal equality", "principle of legal equality", "legal equality of states", "sovereign equality"],
+        displayAnswer: "Principle of Legal Equality of States",
+        explanation: "Westphalia established that regardless of size or power, states possess sovereign legal equality."
+      },
+      {
+        id: 17,
+        question: "What Latin/French political doctrine of national interest replaced religious authority after Westphalia?",
+        accepted: ["reason of state", "raison detat", "raison d'etat"],
+        displayAnswer: "Reason of State (Raison d'État)",
+        explanation: "Slide 20: 'Reason of state replaced religion' as the guiding motivation for domestic governance and foreign policy."
+      },
+      {
+        id: 18,
+        question: "Which article and paragraph of the UN Charter prohibits UN intervention in matters essentially within domestic jurisdiction?",
+        accepted: ["article 2(7)", "article 2 paragraph 7", "2(7)", "article 2 7"],
+        displayAnswer: "Article 2(7)",
+        explanation: "Article 2(7) guarantees that the UN cannot intervene in the internal, domestic affairs of sovereign member states."
+      },
+      {
+        id: 19,
+        question: "Which article and paragraph of the UN Charter establishes that the organization is based on the sovereign equality of all members?",
+        accepted: ["article 2(1)", "article 2 paragraph 1", "2(1)", "article 2 1"],
+        displayAnswer: "Article 2(1)",
+        explanation: "Article 2(1) enshrines sovereign equality for all UN member states."
+      },
+      {
+        id: 20,
+        question: "On what date was Philippine independence granted by the United States following WWII decolonization?",
+        accepted: ["july 4 1946", "july 4, 1946", "4 july 1946"],
+        displayAnswer: "July 4, 1946",
+        explanation: "The lecturer mentions the Philippines gaining full sovereignty from the US on July 4, 1946."
+      },
+      {
+        id: 21,
+        question: "According to scholar Jaclyn Hawtin, what did the Treaty of Westphalia create an opening for nation-states to have?",
+        accepted: ["a new kind of conversation", "new kind of conversation", "conversation"],
+        displayAnswer: "A new kind of conversation",
+        explanation: "Slide text: 'According to Jaclyn Hawtin, Treaty of Westphalia created an opening for nation states to have a new kind of conversation with each other...'"
+      },
+      {
+        id: 22,
+        question: "What term describes a business enterprise that operates in two or more countries?",
+        accepted: ["multinational corporation", "mnc", "global corporation", "transnational corporation"],
+        displayAnswer: "Multinational Corporation (MNC)",
+        explanation: "Slide 6 defines an MNC as a company that operates in two or more countries to leverage the global environment."
+      },
+      {
+        id: 23,
+        question: "What view regards globalization as an 'exogenous process that is making a profound impact on states affairs' and rendering states powerless?",
+        accepted: ["outside-in view", "outside in view", "outside in"],
+        displayAnswer: "Outside-In View",
+        explanation: "Slide 74: The outside-in view considers globalization external, market-driven, and eroding state sovereignty."
+      },
+      {
+        id: 24,
+        question: "What view recognizes that 'states are the ones influencing the level of global interconnectedness today'?",
+        accepted: ["inside-out view", "inside out view", "inside out"],
+        displayAnswer: "Inside-Out View",
+        explanation: "Slide 75: The inside-out view posits that states actively drive, regulate, and transform globalization rather than being replaced."
+      },
+      {
+        id: 25,
+        question: "Which international court has challenged state sovereignty by investigating state-perpetrated human rights violations such as the Philippine drug war?",
+        accepted: ["international criminal court", "icc"],
+        displayAnswer: "International Criminal Court (ICC)",
+        explanation: "The lecturer cites the ICC investigating President Duterte's drug war as an example of international law encroaching on domestic sovereignty."
+      },
+      {
+        id: 26,
+        question: "What is the term for the process where traditional rural societies are transformed into industrialized and modern societies?",
+        accepted: ["modernization"],
+        displayAnswer: "Modernization",
+        explanation: "Slide 42 defines modernization as the transformation of rural traditional societies into industrialized, market-driven societies."
+      },
+      {
+        id: 27,
+        question: "The Cold War lasted between which two years?",
+        accepted: ["1947-1991", "1947 to 1991", "1947 1991"],
+        displayAnswer: "1947–1991",
+        explanation: "Slide 53 defines the Cold War timeframe as 1947 to 1991."
+      },
+      {
+        id: 28,
+        question: "Who was the Soviet Premier who confronted US President Harry S. Truman over Germany's rearmament in 1948?",
+        accepted: ["joseph stalin", "stalin"],
+        displayAnswer: "Joseph Stalin",
+        explanation: "Slide 58 depicts the 1948 dispute between Harry S. Truman and Joseph Stalin."
+      },
+      {
+        id: 29,
+        question: "In 1950, what communist state was established on the Chinese mainland opposite the Republic of China (Taiwan)?",
+        accepted: ["peoples republic of china", "prc", "people's republic of china"],
+        displayAnswer: "People's Republic of China (PRC)",
+        explanation: "Slide 59 notes the 1950 division between the People's Republic of China and the Republic of China in Taiwan."
+      },
+      {
+        id: 30,
+        question: "In what year did the Korean War proxy conflict break out?",
+        accepted: ["1950", "1951"],
+        displayAnswer: "1950 / 1951",
+        explanation: "Slide 64 references the Korean War proxy conflict during the early 1950s."
+      },
+      {
+        id: 31,
+        question: "Which Eastern European revolution took place in 1956 against Soviet domination?",
+        accepted: ["hungarian revolution", "hungary revolution"],
+        displayAnswer: "Hungarian Revolution",
+        explanation: "Slide 65 details the 1956 Hungarian Revolution."
+      },
+      {
+        id: 32,
+        question: "Which leader spearheaded the 1959 Cuban Revolution?",
+        accepted: ["fidel castro", "castro"],
+        displayAnswer: "Fidel Castro",
+        explanation: "Slide 66 shows Fidel Castro and the M-26-7 movement during the 1959 Cuban Revolution."
+      },
+      {
+        id: 33,
+        question: "In what year was the Berlin Wall constructed to divide East and West Berlin?",
+        accepted: ["1961"],
+        displayAnswer: "1961",
+        explanation: "Slide 69 highlights 1961 as the year of the Berlin Wall's erection."
+      },
+      {
+        id: 34,
+        question: "In which Central Asian nation did the Soviet Union wage war during the 1980s?",
+        accepted: ["afghanistan", "soviet war in afghanistan"],
+        displayAnswer: "Afghanistan",
+        explanation: "Slide 70 shows the 1980s Soviet War in Afghanistan."
+      },
+      {
+        id: 35,
+        question: "Which International Relations theory argues that 'States always compete for power' in an anarchic system?",
+        accepted: ["realism"],
+        displayAnswer: "Realism",
+        explanation: "Slide 51: Realism holds that rational states prioritize self-interest and compete for power in an anarchic world."
+      },
+      {
+        id: 36,
+        question: "Name either Kenneth Waltz or John Mearsheimer as a leading theorist of which IR perspective?",
+        accepted: ["realism"],
+        displayAnswer: "Realism",
+        explanation: "Kenneth Waltz and John Mearsheimer are the primary theorists of Realism listed on Slide 51."
+      },
+      {
+        id: 37,
+        question: "Which IR theory emphasizes the pacifying role of international organizations, economic interdependence, and democracy?",
+        accepted: ["liberalism"],
+        displayAnswer: "Liberalism",
+        explanation: "Slide 51 defines Liberalism around the pacifying effects of democracy, trade, and institutions."
+      },
+      {
+        id: 38,
+        question: "Robert Keohane and Joseph Nye Jr. are prominent theorists of which IR perspective?",
+        accepted: ["liberalism"],
+        displayAnswer: "Liberalism",
+        explanation: "Keohane and Nye are the primary Liberal institutionalist theorists listed on Slide 51."
+      },
+      {
+        id: 39,
+        question: "Which scholar proclaimed the 'End of History' following the fall of the Berlin Wall and triumph of liberalism?",
+        accepted: ["francis fukuyama", "fukuyama"],
+        displayAnswer: "Francis Fukuyama",
+        explanation: "The lecturer references Francis Fukuyama's thesis predicting the ultimate triumph of liberal democracy."
+      },
+      {
+        id: 40,
+        question: "Which IR theory argues that state interests, identities, and anarchy are socially constructed?",
+        accepted: ["constructivism"],
+        displayAnswer: "Constructivism",
+        explanation: "Slide 51: Constructivism asserts that norms, identities, and institutions are socially constructed by human actors."
+      },
+      {
+        id: 41,
+        question: "Alexander Wendt and Nicholas Onuf are the theorists associated with which IR perspective?",
+        accepted: ["constructivism"],
+        displayAnswer: "Constructivism",
+        explanation: "Wendt and Onuf are listed as the primary Constructivist theorists on Slide 51."
+      },
+      {
+        id: 42,
+        question: "Which social theory argues that the world system is divided along economic lines between core, semi-peripheral, and peripheral states?",
+        accepted: ["marxism", "world-systems theory", "world systems theory"],
+        displayAnswer: "Marxism",
+        explanation: "Slide 51: Marxism analyzes capitalist exploitation between core developed nations and peripheral developing states."
+      },
+      {
+        id: 43,
+        question: "Immanuel Wallerstein and Theotonio dos Santos are theorists of which perspective on Slide 51?",
+        accepted: ["marxism"],
+        displayAnswer: "Marxism",
+        explanation: "Wallerstein and dos Santos are the Marxist world-system theorists listed on Slide 51."
+      },
+      {
+        id: 44,
+        question: "What is the primary unit or focus of analysis in Marxist international theory?",
+        accepted: ["world system", "the world system"],
+        displayAnswer: "World system",
+        explanation: "Slide 51 specifies the 'World system' as Marxism's primary unit of analysis."
+      },
+      {
+        id: 45,
+        question: "In the 1944 Bretton Woods conference, which American economist advocated for the IMF to act like a strict bank?",
+        accepted: ["harry dexter white", "harry white", "white"],
+        displayAnswer: "Harry Dexter White",
+        explanation: "Harry Dexter White envisioned a disciplined creditor institution ensuring timely debt repayment."
+      },
+      {
+        id: 46,
+        question: "In Bretton Woods, which British economist envisioned the IMF as a cooperative overdraft fund for crisis relief?",
+        accepted: ["john maynard keynes", "keynes"],
+        displayAnswer: "John Maynard Keynes",
+        explanation: "Keynes advocated for a cooperative fund member states could draw from during periodic balance-of-payments crises."
+      },
+      {
+        id: 47,
+        question: "What are the three pillars of Neoliberalism presented in the lectures?",
+        accepted: ["liberalization deregulation privatization", "liberalization, deregulation, and privatization"],
+        displayAnswer: "Liberalization, Deregulation, and Privatization",
+        explanation: "The three free-market pillars of neoliberal reform."
+      },
+      {
+        id: 48,
+        question: "What is the protectionist policy of replacing foreign imported goods with domestic manufacturing called?",
+        accepted: ["import substitution", "isi", "import substitution industrialization"],
+        displayAnswer: "Import Substitution",
+        explanation: "Import substitution encourages local industrial manufacturing to replace foreign imports."
+      },
+      {
+        id: 49,
+        question: "Which Philippine president is cited for state-controlled monopolies over basic public utilities (PLDT, NPC, water)?",
+        accepted: ["ferdinand marcos", "ferdinand marcos sr", "marcos", "president marcos"],
+        displayAnswer: "Ferdinand Marcos Sr.",
+        explanation: "The Marcos regime maintained centralized, protectionist state ownership over utilities."
+      },
+      {
+        id: 50,
+        question: "Which Philippine president implemented post-1986 neoliberal deregulation and privatization of basic utility sectors?",
+        accepted: ["corazon aquino", "cory aquino", "aquino"],
+        displayAnswer: "Corazon Aquino",
+        explanation: "President Corazon Aquino initiated the privatization and deregulation of state-held assets and public utilities."
+      }
+    ];
+
+    function shuffleArray(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    // ==========================================
+    // IDENTIFICATION QUIZ LOGIC
+    // ==========================================
+    let idQuestionsList = [...masterQuestions];
+    let idState = {};
+
+    function renderIdCards() {
+      const mount = document.getElementById('id-container');
+      mount.innerHTML = '';
+
+      idQuestionsList.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-card';
+        div.id = `id-card-${q.id}`;
+        div.innerHTML = `
+          <div class="quiz-q-num">Question ${idx + 1} of${idQuestionsList.length}</div>
+          <div class="quiz-prompt">${q.question}</div>
+          <div class="quiz-input-group">
+            <input type="text" class="quiz-input" id="id-input-${q.id}" placeholder="Type exact identification answer here..." autocomplete="off" />
+            <button class="btn-submit" onclick="submitIdAnswer(${q.id})">Check</button>
+          </div>
+          <div class="feedback-box" id="id-feedback-${q.id}"></div>
+        `;
+        mount.appendChild(div);
+      });
+    }
+
+    function cleanInput(val) {
+      return val.trim().toLowerCase().replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+    }
+
+    function submitIdAnswer(id) {
+      const q = idQuestionsList.find(item => item.id === id);
+      const input = document.getElementById(`id-input-${id}`);
+      const feedback = document.getElementById(`id-feedback-${id}`);
+      const userVal = cleanInput(input.value);
+
+      if (!userVal) {
+        alert("Please enter an answer before checking.");
+        return;
+      }
+
+      const isCorrect = q.accepted.some(ans => cleanInput(ans) === userVal);
+
+      if (isCorrect) {
+        feedback.className = 'feedback-box correct';
+        feedback.innerHTML = `
+          <strong>✓ Correct!</strong>
+          ${q.explanation}
+        `;
+        idState[id] = 1;
+      } else {
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = `
+          <strong>✗ Incorrect!</strong>
+          <strong>Correct Answer:</strong> ${q.displayAnswer}<br>
+          <span style="font-size:0.85em; margin-top:0.3rem; display:block;"><strong>Slide Context:</strong> ${q.explanation}</span>
+        `;
+        idState[id] = 0;
+      }
+
+      updateIdScore();
+    }
+
+    function updateIdScore() {
+      const answered = Object.keys(idState).length;
+      const correct = Object.values(idState).reduce((a, b) => a + b, 0);
+
+      document.getElementById('id-progress').innerText = `${answered}/${idQuestionsList.length}`;
+      document.getElementById('id-score').innerText = `${correct} / ${idQuestionsList.length}`;
+    }
+
+    function shuffleIdQuiz() {
+      idQuestionsList = shuffleArray(idQuestionsList);
+      idState = {};
+      renderIdCards();
+      updateIdScore();
+    }
+
+    function resetIdQuiz() {
+      idState = {};
+      renderIdCards();
+      updateIdScore();
+    }
+
+    // ==========================================
+    // MULTIPLE CHOICE QUIZ LOGIC
+    // ==========================================
+    let mcQuestionsList = masterQuestions.map(q => {
+      const originalOptions = q.options || [
+        q.displayAnswer, 
+        "Alternative Perspective A", 
+        "Alternative Perspective B", 
+        "Alternative Perspective C"
+      ];
+      const correctAnswerText = originalOptions[q.correctIndex || 0];
+      const shuffledOptions = shuffleArray(originalOptions);
+      return {
+        ...q,
+        shuffledOptions,
+        correctAnswerText
+      };
+    });
+    let mcState = {};
+
+    function renderMcCards() {
+      const mount = document.getElementById('mc-container');
+      mount.innerHTML = '';
+
+      mcQuestionsList.forEach((q, idx) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-card';
+        div.id = `mc-card-${q.id}`;
+
+        let optionsHtml = '';
+        q.shuffledOptions.forEach((opt, optIdx) => {
+          optionsHtml += `
+            <button class="mc-option" id="mc-btn-${q.id}-${optIdx}" onclick="submitMcAnswer(${q.id}, '${opt.replace(/'/g, "\\'")}', ${optIdx})">
+              ${String.fromCharCode(65 + optIdx)}. ${opt}
+            </button>
+          `;
+        });
+
+        div.innerHTML = `
+          <div class="quiz-q-num">Question ${idx + 1} of ${mcQuestionsList.length}</div>
+          <div class="quiz-prompt">${q.question}</div>
+          <div class="mc-options" id="mc-opts-${q.id}">
+            ${optionsHtml}
+          </div>
+          <div class="feedback-box" id="mc-feedback-${q.id}"></div>
+        `;
+        mount.appendChild(div);
+      });
+    }
+
+    function submitMcAnswer(qId, selectedText, optIdx) {
+      if (mcState.hasOwnProperty(qId)) return;
+
+      const q = mcQuestionsList.find(item => item.id === qId);
+      const feedback = document.getElementById(`mc-feedback-${qId}`);
+      const isCorrect = (selectedText === q.correctAnswerText);
+
+      const optsContainer = document.getElementById(`mc-opts-${qId}`);
+      const buttons = optsContainer.querySelectorAll('.mc-option');
+      buttons.forEach(btn => btn.disabled = true);
+
+      const clickedBtn = document.getElementById(`mc-btn-${qId}-${optIdx}`);
+
+      if (isCorrect) {
+        clickedBtn.classList.add('selected-correct');
+        feedback.className = 'feedback-box correct';
+        feedback.innerHTML = `
+          <strong>✓ Correct!</strong>
+          ${q.explanation}
+        `;
+        mcState[qId] = 1;
+      } else {
+        clickedBtn.classList.add('selected-wrong');
+        buttons.forEach(btn => {
+          if (btn.innerText.includes(q.correctAnswerText)) {
+            btn.classList.add('highlight-answer');
+          }
+        });
+        feedback.className = 'feedback-box wrong';
+        feedback.innerHTML = `
+          <strong>✗ Incorrect!</strong>
+          <strong>Correct Answer:</strong> ${q.correctAnswerText}<br>
+          <span style="font-size:0.85em; margin-top:0.3rem; display:block;"><strong>Slide Context:</strong> ${q.explanation}</span>
+        `;
+        mcState[qId] = 0;
+      }
+
+      updateMcScore();
+    }
+
+    function updateMcScore() {
+      const answered = Object.keys(mcState).length;
+      const correct = Object.values(mcState).reduce((a, b) => a + b, 0);
+
+      document.getElementById('mc-progress').innerText = `${answered}/${mcQuestionsList.length}`;
+      document.getElementById('mc-score').innerText = `${correct} / ${mcQuestionsList.length}`;
+    }
+
+    function shuffleMcQuiz() {
+      mcQuestionsList = shuffleArray(mcQuestionsList).map(q => {
+        const shuffledOptions = shuffleArray(q.shuffledOptions);
+        return { ...q, shuffledOptions };
+      });
+      mcState = {};
+      renderMcCards();
+      updateMcScore();
+    }
+
+    function resetMcQuiz() {
+      mcState = {};
+      renderMcCards();
+      updateMcScore();
+    }
+
+    window.onload = function() {
+      renderIdCards();
+      renderMcCards();
+    };
+  </script>
+</body>
+</html>
